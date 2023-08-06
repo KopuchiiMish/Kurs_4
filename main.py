@@ -18,7 +18,7 @@ def user_interaction():
     print('Найденные вакансии на сайте "SuperJob":\n')
     for i in from_sj:
         print(i)
-    print('Отсортировать данные и записать в файл?')
+    print('Отсортировать данные и записать в файл (yes/no)?')
     ans = input()
     if ans == 'yes':
         from_all = JSONSaver()
@@ -26,10 +26,7 @@ def user_interaction():
         from_all.add_vacancies(from_sj)
         from_all.sort_vacancies_by_salary()
         from_all.save_vacancies()
-    else:
-        print('Введено неизвестное значение ответа.')
 
 
 if __name__ == '__main__':
     user_interaction()
-
